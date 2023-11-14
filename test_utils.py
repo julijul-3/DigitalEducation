@@ -1,5 +1,6 @@
 import threading
 import time
+from datetime import datetime, timedelta
 
 def test(f, debug=False):
     """ Test correctness and speed of the implementation """
@@ -43,3 +44,9 @@ def test(f, debug=False):
 def _helper(f, arr, res):
     """ Helper with mutable {res} variable to get result at the end of multithreading """
     res.append(f(arr))
+
+def due_time():
+    now = datetime.now()
+    due_time = now + timedelta(minutes=10)+ timedelta(hours=1)
+    current_time = due_time.strftime("%H:%M:%S")
+    print("Please upload this notebook by ", current_time)
