@@ -1,10 +1,19 @@
 import threading
 import time
 from datetime import datetime, timedelta
+from IPython.display import JSON
+
+d = {"run_count": 0}
+
+def run_count():
+    global d 
+    d["run_count"] += 1
+    JSON(d)
+
 
 def test(f, debug=False):
     """ Test correctness and speed of the implementation """
-    
+    run_count()
     tests = [
         ([1, 1, 1], 2),
         ([2, 1, 1], 1),
