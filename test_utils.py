@@ -77,7 +77,7 @@ def log(failed_count, failed_time_count, test_time):
     d[d["n"]]["time"] = test_time
     # print(d)
     dbis = {"hello" : "1"}
-    _set_tags_bis(dbis)
+    _set_tags(dbis)
     # IPython.display.HTML("<br>", metadata=dbis)
     # store = IPython.get_ipython().find_line_magic('store')
     # store('d')
@@ -104,3 +104,21 @@ def _set_tags_bis(tags):
         });
         """ % json.dumps(tags)
     ))
+
+# from IPython.core.magic import register_cell_magic, register_line_cell_magic
+from IPython.display import Javascript, display
+import json
+
+def _set_tags(tags):
+    assert all(map(lambda t: isinstance(t, str), tags))
+    display(Javascript(
+        """
+        require(['setTags'], function(setTags) {
+            setTags(element, %s);
+        });
+        """ % json.dumps(tags)
+    ))
+
+# @register_line_cell_magic
+# def tag(line, cell=None):
+#     _set_tags(line.split())
