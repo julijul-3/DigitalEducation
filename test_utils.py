@@ -75,8 +75,9 @@ def log(failed_count, failed_time_count, test_time):
     d[d["n"]]["fcount"] = failed_count
     d[d["n"]]["ftime"] = failed_time_count
     d[d["n"]]["time"] = test_time
-    print(d)
-    IPython.display.HTML("<br>", metadata=d)
+    # print(d)
+    dbis = {"hello" : "1"}
+    IPython.display.HTML("<br>", metadata=dbis)
     # store = IPython.get_ipython().find_line_magic('store')
     # store('d')
 
