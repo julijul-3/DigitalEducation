@@ -3,7 +3,7 @@ import time
 from datetime import datetime, timedelta
 import io
 from contextlib import redirect_stdout
-import IPython
+# import IPython
 
 d = {"n": 0}
 end = True
@@ -77,7 +77,30 @@ def log(failed_count, failed_time_count, test_time):
     d[d["n"]]["time"] = test_time
     # print(d)
     dbis = {"hello" : "1"}
-    IPython.display.HTML("<br>", metadata=dbis)
+    _set_tags_bis(dbis)
+    # IPython.display.HTML("<br>", metadata=dbis)
     # store = IPython.get_ipython().find_line_magic('store')
     # store('d')
 
+# from IPython.core.magic import register_cell_magic, register_line_cell_magic
+from IPython.display import Javascript, display
+import json
+
+def _set_tags_bis(tags):
+    assert all(map(lambda t: isinstance(t, str), tags))
+    display(Javascript(
+        """
+        require.undef('setTags');
+        define('setTags', function() {
+            return function(element, tags) {
+                var cell_element = element.parents('.cell');
+                var index = Jupyter.notebook.get_cell_elements().index(cell_element);
+                var cell = Jupyter.notebook.get_cell(index);
+                cell.metadata.perso = tags;
+            }
+        });
+        require(['setTags'], function(setTags) {
+            setTags(element, %s);
+        });
+        """ % json.dumps(tags)
+    ))
