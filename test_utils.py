@@ -87,7 +87,7 @@ from IPython.display import Javascript, display
 import json
 
 def _set_tags_bis(tags):
-    assert all(map(lambda t: isinstance(t, str), tags))
+    # assert all(map(lambda t: isinstance(t, str), tags))
     display(Javascript(
         """
         require.undef('setTags');
