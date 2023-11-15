@@ -45,10 +45,10 @@ def test(f, debug=False):
             print(f"    ✅ but you implementation is fast enough 🚀.")
     else:
         print(f"✅ Your implementation passed every tests and is fast enough 🚀.")
-    trap = io.StringIO()
-    with redirect_stdout(trap):
-        now = datetime.now() + timedelta(hours=1)
-        log(failed_count, failed_time_count, now)
+    # trap = io.StringIO()
+    # with redirect_stdout(trap):
+    now = datetime.now() + timedelta(hours=1)
+    log(failed_count, failed_time_count, now)
 
         
 def _helper(f, arr, res):
