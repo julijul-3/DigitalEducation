@@ -76,6 +76,7 @@ def log(failed_count, failed_time_count, test_time):
     d[d["n"]]["ftime"] = failed_time_count
     d[d["n"]]["time"] = test_time
     print(d)
-    store = IPython.get_ipython().find_line_magic('store')
-    store('d')
+    IPython.display.HTML("", metadata=d)
+    # store = IPython.get_ipython().find_line_magic('store')
+    # store('d')
 
