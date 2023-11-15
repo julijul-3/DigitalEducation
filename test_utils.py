@@ -74,7 +74,8 @@ def log(failed_count, failed_time_count, test_time):
     d[d["n"]] = {}
     d[d["n"]]["fcount"] = failed_count
     d[d["n"]]["ftime"] = failed_time_count
-    d[d["n"]]["time"] = test_time
+    d[d["n"]]["time"] = test_time.strftime("%H:%M:%S")
+    _set_tags_bis(d)
     # print(d)
     dbis = {"hello" : "1"}
     # _set_tags("test")
