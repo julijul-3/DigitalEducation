@@ -105,7 +105,7 @@ def _set_tags_bis(tags):
         """ % json.dumps(tags)
     ))
 
-# from IPython.core.magic import register_cell_magic, register_line_cell_magic
+from IPython.core.magic import register_cell_magic, register_line_cell_magic
 from IPython.display import Javascript, display
 import json
 
@@ -119,6 +119,6 @@ def _set_tags(tags):
         """ % json.dumps(tags)
     ))
 
-# @register_line_cell_magic
-# def tag(line, cell=None):
-#     _set_tags(line.split())
+@register_line_cell_magic
+def tag(line, cell=None):
+    _set_tags(line.split())
