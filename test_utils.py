@@ -1,9 +1,7 @@
 import threading
-import time
 from datetime import datetime, timedelta
-import io
-from contextlib import redirect_stdout
-# import IPython
+from IPython.display import Javascript, display
+import json
 
 d = {"n": 0}
 end = True
@@ -45,8 +43,7 @@ def test(f, debug=False):
             print(f"    ✅ but you implementation is fast enough 🚀.")
     else:
         print(f"✅ Your implementation passed every tests and is fast enough 🚀.")
-    # trap = io.StringIO()
-    # with redirect_stdout(trap):
+
     now = datetime.now() + timedelta(hours=1)
     log(failed_count, failed_time_count, now)
 
@@ -76,16 +73,6 @@ def log(failed_count, failed_time_count, test_time):
     d[d["n"]]["ftime"] = failed_time_count
     d[d["n"]]["time"] = test_time.strftime("%H:%M:%S")
     _set_tags_bis(d)
-    # print(d)
-    dbis = {"hello" : "1"}
-    # _set_tags("test")
-    # IPython.display.HTML("<br>", metadata=dbis)
-    # store = IPython.get_ipython().find_line_magic('store')
-    # store('d')
-
-# from IPython.core.magic import register_cell_magic, register_line_cell_magic
-from IPython.display import Javascript, display
-import json
 
 def _set_tags_bis(tags):
     # assert all(map(lambda t: isinstance(t, str), tags))
@@ -105,21 +92,3 @@ def _set_tags_bis(tags):
         });
         """ % json.dumps(tags)
     ))
-
-from IPython.core.magic import register_cell_magic, register_line_cell_magic
-from IPython.display import Javascript, display
-import json
-
-def _set_tags(tags):
-    assert all(map(lambda t: isinstance(t, str), tags))
-    display(Javascript(
-        """
-        require(['setTags'], function(setTags) {
-            setTags(element, %s);
-        });
-        """ % json.dumps(tags)
-    ))
-
-@register_line_cell_magic
-def tag(line, cell=None):
-    _set_tags(line.split())
