@@ -1,6 +1,13 @@
 import threading
 import time
 from datetime import datetime, timedelta
+import io
+from contextlib import redirect_stdout
+import IPython
+
+d = {"n": 0}
+end = True
+current_time = 0
 
 def test(f, debug=False):
     """ Test correctness and speed of the implementation """
@@ -38,6 +45,10 @@ def test(f, debug=False):
             print(f"    ✅ but you implementation is fast enough 🚀.")
     else:
         print(f"✅ Your implementation passed every tests and is fast enough 🚀.")
+    trap = io.StringIO()
+    with redirect_stdout(trap):
+        now = datetime.now() + timedelta(hours=1)
+        log(failed_count, failed_time_count, now)
 
         
 def _helper(f, arr, res):
@@ -45,7 +56,26 @@ def _helper(f, arr, res):
     res.append(f(arr))
 
 def due_time():
-    now = datetime.now()
-    due_time = now + timedelta(minutes=10)+ timedelta(hours=1)
-    current_time = due_time.strftime("%H:%M:%S")
-    print("Please upload this notebook by ", current_time)
+    global end
+    global current_time
+    if (end and not current_time):
+        now = datetime.now()
+        due_time = now + timedelta(minutes=10) + timedelta(hours=1)
+        current_time = due_time.strftime("%H:%M:%S")
+        end = False
+        print(f"Please upload this notebook on Moodle by {current_time}.")
+    else:
+        print(f"Please upload this notebook on Moodle by {current_time}.")
+    
+
+def log(failed_count, failed_time_count, test_time):
+    global d
+    d["n"] += 1
+    d[d["n"]] = {}
+    d[d["n"]]["fcount"] = failed_count
+    d[d["n"]]["ftime"] = failed_time_count
+    d[d["n"]]["time"] = test_time
+    print(d)
+    store = IPython.get_ipython().find_line_magic('store')
+    store('d')
+
