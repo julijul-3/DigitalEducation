@@ -2,6 +2,7 @@ import threading
 from datetime import datetime, timedelta
 from IPython.display import Javascript, display
 import json
+import numpy as np
 
 d = {"n": 0}
 end = True
@@ -10,11 +11,11 @@ current_time = 0
 def test(f, debug=False):
     """ Test correctness and speed of the implementation """
     tests = [
-        ([1, 1, 1], 2),
-        ([2, 1, 1], 1),
-        ([1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9], 3),
-        ([2, 3, 1, 1, 4], 2),
-        ([5]*51, 10)
+        (np.array([1, 1, 1]), 2),
+        (np.array([2, 1, 1]), 1),
+        (np.array([1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9]), 3),
+        (np.array([2, 3, 1, 1, 4]), 2),
+        (np.array([5]*51), 10)
     ]
     
     failed_count = 0 # Number of failed test (logical or time)
