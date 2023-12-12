@@ -1,0 +1,137 @@
+﻿Surname,"First name","Email address",State,"Started on",Completed,"Time taken",Grade/10.00,"Response 1","Response 2","Response 3","Response 4","Response 5","Response 6"
+Rayan,Rami,rayan.rami@unil.ch,Finished,"21 November 2023  12:34 PM","21 November 2023  12:44 PM","9 mins 55 secs",4.25,"{n} {log} {(} {n} {)}","{Top-down} {Bottom-up} {Left} {Left}","{keep} {keep} {delete} {delete} {keep} {keep} {delete}",-,-,"def min_coins(coins, amount, memo):
+
+#No time because of a moodle bug 
+
+return min_count"
+dp13,dp13,dp.moodle2023+13@gmail.com,Finished,"22 November 2023  7:31 PM","22 November 2023  7:41 PM","9 mins 51 secs",6.88,"{n} {²}","{Top-down} {Bottom-up} {Right} {Left}","{keep} {keep} {delete} {delete} {keep} {keep} {delete}",-,-,"def min_coins(coins, amount, memo={}):
+
+    if amount == 0:
+        return 0
+    if amount < 0:
+        return float('inf')
+
+    if amount in memo :
+
+        return memo[amount]
+    
+    min_count = float('inf')
+    
+    for coin in coins:
+        count = min_coins(coins, amount - coin, memo)
+        if count != float('inf'):
+            min_count = min(min_count, count + 1)
+
+            memo[amount] = min_count
+ return min_count"
+17,17,dp.moodle2023+17@gmail.com,Finished,"25 November 2023  11:03 AM","25 November 2023  11:13 AM","10 mins",5.63,"{2} {ⁿ}","{Bottom-up} {Top-down} {Right} {Left}","{keep} {keep} {delete} {delete} {keep} {keep} {delete}",-,-,-
+18,18,dp.moodle2023+18@gmail.com,Finished,"25 November 2023  12:42 PM","25 November 2023  12:50 PM","8 mins 11 secs",3.75,"{2} {n}","{Bottom-up} {Top-down} {Left} {Left}","{keep} {keep} {delete} {delete} {keep} {keep} {delete}",-,-,-
+dp12,dp12,dp.moodle2023+12@gmail.com,Finished,"27 November 2023  10:12 AM","27 November 2023  10:22 AM","10 mins 1 sec",6.88,"{2} {ⁿ}","{Top-down} {Bottom-up} {Right} {Left}","{keep} {keep} {delete} {delete} {keep} {keep} {delete}",-,-,"def min_coins(coins, amount):
+    if amount == 0:
+        return 0
+    if amount < 0:
+        return float('inf'
+
+    return min_count"
+MARKAR,Aman,amanmarkar@yahoo.co.uk,Finished,"28 November 2023  2:47 PM","28 November 2023  2:57 PM","10 mins 1 sec",7.38,"{2} {ⁿ}","{Bottom-up} {Top-down} {Right} {Left}","{keep} {keep} {delete} {delete} {keep} {keep} {delete}",-,-,"def min_coins(coins,amount,memo={}):
+
+     if amount == 0:
+
+          return 0
+
+     if amount <0:
+
+       return float(""inf"")
+
+     else if amount in memo:
+
+          return memo[amount]
+
+     else:
+
+        for coin in coins:
+
+             count = min_coins(coins,amout-coin,memo)
+
+             min_count = min(min_count,count+1)
+
+        memo[amount]=min_count
+
+      return min_"
+20,20,dp.moodle2023+20@gmail.com,Finished,"28 November 2023  4:16 PM","28 November 2023  4:26 PM","10 mins",4.88,"{2} {n}","{Bottom-up} {Top-down} {Same complexity for both} {Same complexity for both}","{keep} {keep} {delete} {delete} {keep} {keep} {delete}",-,-," t = []
+ if amount == 0:
+        return 0
+    if amount < 0:
+        return float('inf')
+    
+    min_count = float('inf')
+    
+    for coin in coins:
+        if t[coin]
+        count = min_coins(coins, amount - coin)
+        if count != float('inf'):
+            min_count = min(min_count, count + 1)
+    
+    return min_count"
+programming,dynamic,dp.moodle2023@gmail.com,Finished,"28 November 2023  5:19 PM","28 November 2023  5:29 PM","10 mins 1 sec",1.25,"{n} {}","{Top-down} {Bottom-up} {Same complexity for both} {Right}",-,-,-,-
+dp14,dp14,dp.moodle2023+14@gmail.com,Finished,"29 November 2023  10:13 AM","29 November 2023  10:23 AM","9 mins 59 secs",3.57,"{n} {ⁿ}","{Top-down} {Bottom-up} {Same complexity for both} {Right}","{keep} {keep} {keep} {keep} {keep} {delete} {keep}",-,-,"def min_coins(coins, amount, memo={}):
+
+    while amount%5 == 0:
+
+     coins += 1:
+
+while amount%2 == 0:
+
+     coins += 1:
+
+while amount%1 == 0:
+
+     coins += 1:
+
+min_count=coins:        
+    
+    return min_count"
+27,dp,dp.moodle2023+27@gmail.com,Finished,"29 November 2023  7:34 PM","29 November 2023  7:44 PM","10 mins 1 sec",4.02,"{log} {n}","{Top-down} {Bottom-up} {Right} {Left}","{keep} {keep} {delete} {delete} {keep} {keep} {keep}",-,-,"def min_coins(coins, amount, memo={}):
+
+    if coins[-1] - amount   w// Assuming the list is sorted   
+    return min_count"
+26,dp,dp.moodle2023+26@gmail.com,Finished,"3 December 2023  3:59 PM","3 December 2023  4:09 PM","10 mins 1 sec",5.54,"{2} {ⁿ}","{Top-down} {Bottom-up} {Left} {Right}","{keep} {keep} {keep} {keep} {keep} {keep} {delete}",-,-,"nbCoins = amount - coint[:1]
+
+return min_count(amount - nbCoi"
+19,19,dp.moodle2023+19@gmail.com,Finished,"4 December 2023  3:30 PM","4 December 2023  3:39 PM","8 mins 55 secs",8.13,"{²} {ⁿ}","{Top-down} {Bottom-up} {Right} {Left}","{keep} {keep} {delete} {delete} {keep} {keep} {delete}",-,-,"def min_coins(coins, amt, memo={}):
+
+    if amt== 0:
+
+        return 0
+
+    if amt< 0:
+
+        return float('inf')
+
+    
+
+    if amt in memo:
+
+        return memo[amt]
+
+    min_count = float('inf')
+
+    for coin in coins:
+
+        count = min_coins(coins, amt- coin, memo)
+
+        if count != float('inf'):
+
+            min_count = min(min_count, count + 1)
+
+    memo[amt] = min_count
+
+    return min_count
+
+coins = [2, 5, 10]
+
+amount = 21
+
+result = min_coins(coins, amount)
+
+print(f""minimum coins needed for {amount} CHF: {result}"")"

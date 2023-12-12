@@ -1,0 +1,90 @@
+﻿Surname,"First name","Email address",State,"Started on",Completed,"Time taken",Grade/10.00,"Response 1","Response 2","Response 3","Response 4","Response 5","Response 6"
+dp,dp,dp.moodle2023+2@gmail.com,Finished,"21 November 2023  1:06 PM","21 November 2023  1:08 PM","2 mins 30 secs",3.21,"{O} {(} {2} {ⁿ} {)}","{Bottom-up} {Top-down} {Left} {Right}","{delete} {delete} {keep} {keep} {keep} {keep} {keep}",-,-,-
+dp,dp,dp.moodle2023+7@gmail.com,Finished,"22 November 2023  5:27 PM","22 November 2023  5:31 PM","4 mins 13 secs",4.02,"{log} {n}","{Bottom-up} {Top-down} {Right} {Left}","{keep} {keep} {delete} {delete} {delete} {keep} {delete}",-,-,"memo[0] = 0
+
+for coin in coins:
+
+for i in range(coin, target + 1):
+
+memo[i] = min(memo[i], memo[i - coin] + 1)
+return memo[target] if memo[target] != float('inf') else -1"
+dp,dp,dp.moodle2023+1@gmail.com,Finished,"22 November 2023  9:55 PM","22 November 2023  10:05 PM","10 mins",5.80,"{2} {ⁿ}","{Top-down} {Bottom-up} {Right} {Right}","{keep} {keep} {keep} {keep} {keep} {delete} {delete}",-,-,"def min_coins(coins, amount, memo={}):
+    if amount == 0:
+         return 0
+    
+    return min_count
+
+j'ai pas eu le temps"
+dp8,dp8,dp.moodle2023+8@gmail.com,Finished,"25 November 2023  5:40 PM","25 November 2023  5:50 PM","9 mins 42 secs",9.38,"{2} {ⁿ}","{Top-down} {Bottom-up} {Right} {Right}","{keep} {keep} {delete} {delete} {keep} {keep} {delete}",-,-,"def min_coins(coins, amount, memo={}):    
+    if amount == 0:
+        return 0
+    if amount < 0:
+        return float('inf')
+    if amount in memo 
+        return memo[amount]
+
+    min_count = float('inf')
+    
+    for coin in coins:
+        count = min_coins(coins, amount - coin)
+        if count != float('inf'):
+            min_count = min(min_count, count + 1)
+            memo[amount] = min_count 
+    
+    return min_count"
+dp,dp,dp.moodle2023+6@gmail.com,Finished,"27 November 2023  9:09 PM","27 November 2023  9:19 PM","10 mins",7.64,"{2} {ⁿ}","{Top-down} {Bottom-up} {Left} {Right}","{keep} {keep} {delete} {delete} {keep} {keep} {keep}",-,-,"def min_coins(coins, amount, memo={}):
+    if amount == 0:
+        return 0
+    if amount < 0:
+        return float('inf')
+
+    Elif n in t:
+
+          return t(n)
+
+    
+    Else min_count = float('inf')
+    
+    for coin in coins:
+        count = min_coins(coins, amount - coin)
+        if count != float('inf'):
+            min_count = min(min_count, count + 1)
+    
+    return min_count"
+Diallo,Fatimah,fatimahzdiallo@yahoo.com,Finished,"28 November 2023  8:55 AM","28 November 2023  9:03 AM","7 mins 46 secs",8.75,"{2} {ⁿ}","{Top-down} {Bottom-up} {Left} {Right}","{keep} {keep} {delete} {delete} {keep} {keep} {delete}",-,-,"def min_coins(coins, amount, memo={}):
+
+    if amount == 0:
+
+        return 0
+
+    if amount < 0:
+
+        return float('inf')
+
+    
+
+    if amount in memo:
+
+        return memo[amount]
+
+    
+
+    min_count = float('inf')
+
+    
+
+    for coin in coins:
+
+        count = min_coins(coins, amount - coin, memo)
+
+        if count != float('inf'):
+
+            min_count = min(min_count, count + 1)
+
+    
+
+    memo[amount] = min_count
+
+    return min_count"
+dp11,dp11,dp.moodle2023+11@gmail.com,Finished,"28 November 2023  12:26 PM","28 November 2023  12:31 PM","4 mins 36 secs",5.00,"{2} {ⁿ}","{Bottom-up} {Top-down} {Left} {Left}","{keep} {keep} {delete} {delete} {keep} {keep} {delete}",-,-,-
+dp,dp,dp.moodle2023+3@gmail.com,Finished,"4 December 2023  10:45 PM","4 December 2023  10:47 PM","1 min 52 secs",3.66,"{log} {1}","{Top-down} {Bottom-up} {Right} {Left}","{keep} {keep} {keep} {keep} {keep} {keep} {delete}",-,-,-
